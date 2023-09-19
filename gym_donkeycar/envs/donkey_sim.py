@@ -437,6 +437,7 @@ class DonkeyUnitySimHandler(IMesgHandler):
         return self.camera_img_size
 
     def take_action(self, action: np.ndarray) -> None:
+        print(f"steering: {action[0]}, throttle: {action[1]}")
         self.send_control(action[0], action[1])
 
     def observe(self) -> Tuple[np.ndarray, float, bool, Dict[str, Any]]:
